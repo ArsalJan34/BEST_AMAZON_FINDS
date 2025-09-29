@@ -91,5 +91,18 @@ img {
     font-family: Arial, sans-serif;
     margin-top: 2px;
     }
-
-    
+  .card1 h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #0ff;
+    }
+     .card1 p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      #searchInput {
+        width: 80%;
+      }
+    }
