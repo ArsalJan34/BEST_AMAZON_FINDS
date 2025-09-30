@@ -70,7 +70,7 @@ img {
    
     border-radius: 10px;
 }
-.card {
+.card1 {
       background: #111;
       border: 2px solid #222;
       border-radius: 12px;
@@ -93,12 +93,12 @@ img {
     font-family: Arial, sans-serif;
     margin-top: 2px;
     }
-  .card h3 {
+  .card1 h3 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
       color: #0ff;
     }
-     .card p {
+     .card1 p {
       font-size: 0.95rem;
       margin-bottom: 1rem;
       color: #ccc;
