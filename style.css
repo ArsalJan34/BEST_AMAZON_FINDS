@@ -1,110 +1,185 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
     text-decoration: none;
     list-style: none;
 }
+
 body {
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
 }
+
 .header {
-    background-color: transparent;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid rgb(0, 94, 255);
-    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav ul {
-     display: flex;
-     gap: 15px;
-     margin: 10px;
+h1 {
+    color: #ff9900;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
 }
+
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
 nav ul li a {
     color: white;
     font-weight: bold;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 6px;
 }
-h1 {
-    color: rgb(255, 153, 0);
+
+nav ul li a:hover {
+    background: rgb(0, 94, 255);
+    color: #fff;
+    box-shadow: 0 0 8px rgba(0, 94, 255, 0.6);
 }
+
+
 .search-bar {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
-.search-bar input {
-    padding: 2px;
-    border: none;
-    border-radius: 5px;
-    width: 200px;
-    color: black;
 
+.search-bar input {
+    padding: 8px 12px;
+    border: 2px solid #444;
+    border-radius: 6px;
+    width: 220px;
+    background: #fff;
+    color: #000;
+    transition: 0.3s;
 }
+
+.search-bar input:focus {
+    outline: none;
+    border-color: rgb(0, 94, 255);
+    box-shadow: 0 0 6px rgba(0, 94, 255, 0.7);
+}
+
 .search-bar button {
-    padding: 5px 10px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: rgb(0, 94, 255);
     color: white;
+    font-weight: bold;
     cursor: pointer;
-    transition: ease .5s;
+    transition: 0.3s;
 }
-.search-bar button:hover{
-    background:black;
-    border: 2px solid blue;
-    transform: scale(1.1);
+
+.search-bar button:hover {
+    background: #000;
+    border: 2px solid rgb(0, 94, 255);
+    transform: scale(1.08);
 }
+
+
 .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-img {
-    width: 100%;
-    height: 250px;
-   
-    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
+
+
 .card1 {
-      background: #111;
-      border: 2px solid #222;
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-        max-width: 300px;   
-  margin: auto;
-    }
-    .amazon-btn{
+    background: #111;
+    border: 2px solid #1a1a1a;
+    border-radius: 14px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+    max-width: 320px;
+    margin: auto;
+}
+
+.card1:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+
+.card1 img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.card1 img:hover {
+    transform: scale(1.05);
+}
+
+.card1 h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.card1 p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+
+.amazon-btn {
     display: inline-block;
     padding: 10px 18px;
-    background-color: #FF9900; /* Amazon orange */
+    background-color: #ff9900;
     color: #fff;
-    text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
     transition: 0.3s;
-    font-family: Arial, sans-serif;
-    margin-top: 2px;
+    margin-top: 5px;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.4);
+}
+
+.amazon-btn:hover {
+    background: #e68a00;
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(255, 153, 0, 0.7);
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #111;
+        padding: 10px;
+        border-radius: 8px;
     }
-  .card1 h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #0ff;
+
+    .search-bar input {
+        width: 100%;
     }
-     .card1 p {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      color: #ccc;
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
     }
-    @media (max-width: 768px) {
-      #searchInput {
-        width: 80%;
-      }
-    }
+}
