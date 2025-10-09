@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>About Us | Best Amazon Finds</title>
+
+  <style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #212529;
+      line-height: 1.6;
+    }
+
+    section#about {
+      background-color: #f8f9fa;
+      padding: 60px 20px;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    /* ---------- IMAGE STYLING ---------- */
+    .about-image img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ---------- TEXT AREA ---------- */
+    .about-text {
+      flex: 1 1 400px;
+    }
+
+    .about-text h2 {
+      color: #198754; /* Amazon green style */
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      font-size: 1.05em;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .about-text strong {
+      color: #198754;
+    }
+
+    .disclosure-box {
+      background: #ffffff;
+      border-left: 5px solid #198754;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* ---------- BUTTON ---------- */
+    .about-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #198754;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .about-button:hover {
+      background-color: #146c43;
+      transform: translateY(-3px);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text h2 {
+        font-size: 1.8em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+        <header class="header">
+        <h1>Best Amazon Finds </h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text"  id="searchInput" placeholder="Search...">
+            <button type="submit">Search</button>
+    </header>
+  <section id="about">
+    <div class="about-container">
+      
+      <!-- IMAGE -->
+      <div class="about-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="About Us">
+      </div>
+
+      <!-- TEXT -->
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+          Welcome to <strong>Best Amazon Finds</strong> — your trusted destination for discovering the most useful and trending products available on Amazon.
+        </p>
+        <p>
+          We carefully select and feature <strong>high-quality, top-rated, and value-for-money items</strong> to help you make smarter shopping decisions.
+        </p>
+        <p>
+          Our mission is to save you time by showcasing <strong>only the best-performing and most reliable products</strong> — all in one convenient place.
+        </p>
+        <div class="disclosure-box">
+          <p>
+            <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases — at no extra cost to you. Your support helps us continue providing helpful recommendations.
+          </p>
+        </div>
+
+        <a href="#products" class="about-button">Explore Our Picks</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
