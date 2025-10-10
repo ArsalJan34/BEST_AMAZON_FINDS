@@ -129,6 +129,13 @@ nav   .bx-x {
     cursor: pointer;
     transition: 0.3s;
 }
+.nav-links a.active,
+.sidebar a.active {
+  color: #014dff;              /* Highlight color */
+  border-bottom: 2px solid #014dff; /* Optional: underline for active link */
+  font-weight: bold;
+}
+
 /* 
 
 nav ul {
@@ -281,6 +288,12 @@ nav ul li a:hover {
         gap: 15px;
     }
 } */
+ .nav-links a.active {
+  color: #00b894; /* highlight color */
+  border-bottom: 2px solid #00b894;
+  font-weight: bold;
+}
+
 @media (max-width: 800px){
     .hideOnMobile{
         display: none;

@@ -6,6 +6,11 @@ function hideSidebar(){
   const sidebar = document.querySelector('.sidebar')
   sidebar.style.display = 'none'
 }
+ document.querySelectorAll('nav a').forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
 const searchInput = document.getElementById('searchInput');
 const productCards = document.querySelectorAll('.card1');
 

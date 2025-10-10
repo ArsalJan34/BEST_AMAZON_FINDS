@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Trendazon - Best Amazon Finds</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 🌐 HEADER (Same as your homepage) -->
+  <header class="header">
+    <nav>
+      <img src="./Images/LOGO.png" alt="Trendazon Logo" class="LogoP">
+
+      <!-- Sidebar (for mobile) -->
+      <ul class="sidebar">
+        <li onclick="hideSidebar()"><a href="#"><i class='bx bx-x'></i></a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+      </ul>
+
+      <!-- Desktop Nav -->
+      <ul class="nav-links">
+        <li class="hideOnMobile"><a href="index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="products.html" class="active">Products</a></li>
+        <li class="hideOnMobile"><a href="about.html">About</a></li>
+        <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+        <li class="hideOnMobile"><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+
+      <!-- Menu Icon (Mobile) -->
+      <div class="menu-icon" onclick="showSidebar()">
+        <a href="#"><i class='bx bx-menu'></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 🔍 SEARCH BAR -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search Products...">
+    <button type="submit">Search</button>
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
