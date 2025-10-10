@@ -1,4 +1,4 @@
-/* ------------------ GLOBAL RESETS ------------------ */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +8,12 @@
     list-style: none;
 }
 
-/* ------------------ BODY ------------------ */
 body {
     background-color: #000;
     color: #fff;
     line-height: 1.6;
 }
 
-/* ------------------ HEADER ------------------ */
 .header {
     background: rgba(0, 0, 0, 0.8);
     padding: 15px 30px;
@@ -28,34 +26,24 @@ body {
     z-index: 1000;
 }
 
-/* ------------------ LOGO TITLE ------------------ */
 h1 {
     color: #ff9900;
     font-size: 1.8rem;
     letter-spacing: 1px;
 }
 
-/* ------------------ NAVIGATION BAR ------------------ */
+
 nav ul {
     display: flex;
     gap: 20px;
-    overflow-x: auto; /* <-- enables horizontal scrolling on mobile */
-    white-space: nowrap; /* <-- keeps items in one line */
-    scrollbar-width: none; /* hides scrollbar (Firefox) */
 }
 
-nav ul::-webkit-scrollbar {
-    display: none; /* hides scrollbar (Chrome, Safari) */
-}
-
-/* ------------------ NAV LINKS ------------------ */
 nav ul li a {
     color: white;
     font-weight: bold;
     transition: 0.3s;
     padding: 5px 10px;
     border-radius: 6px;
-    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -64,7 +52,7 @@ nav ul li a:hover {
     box-shadow: 0 0 8px rgba(0, 94, 255, 0.6);
 }
 
-/* ------------------ SEARCH BAR ------------------ */
+
 .search-bar {
     display: flex;
     gap: 10px;
@@ -104,7 +92,7 @@ nav ul li a:hover {
     transform: scale(1.08);
 }
 
-/* ------------------ PRODUCT GRID ------------------ */
+
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -112,7 +100,7 @@ nav ul li a:hover {
     padding: 2rem;
 }
 
-/* ------------------ PRODUCT CARD ------------------ */
+
 .card1 {
     background: #111;
     border: 2px solid #1a1a1a;
@@ -129,6 +117,7 @@ nav ul li a:hover {
     transform: translateY(-8px);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
 }
+
 
 .card1 img {
     width: 100%;
@@ -156,7 +145,7 @@ nav ul li a:hover {
     color: #ccc;
 }
 
-/* ------------------ AMAZON BUTTON ------------------ */
+
 .amazon-btn {
     display: inline-block;
     padding: 10px 18px;
@@ -175,61 +164,22 @@ nav ul li a:hover {
     box-shadow: 0 0 12px rgba(255, 153, 0, 0.7);
 }
 
-/* ------------------ RESPONSIVE DESIGN ------------------ */
+
 @media (max-width: 768px) {
-    /* header stacks vertically */
-    .header {
+    nav ul {
         flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-        width: 100%;
-        overflow: hidden; /* stops full-page sideways scroll */
+        gap: 10px;
+        background: #111;
+        padding: 10px;
+        border-radius: 8px;
     }
 
-    /* search bar takes full width */
     .search-bar input {
         width: 100%;
     }
 
-    /* horizontal scroll only for nav menu */
-    nav {
-        width: 100%;
-        overflow-x: hidden; /* prevent nav overflow outside header */
-    }
-
-    nav ul {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto; /* allows horizontal scroll inside */
-        white-space: nowrap;
+    .header {
+        flex-direction: column;
         gap: 15px;
-        background: #111;
-        padding: 10px;
-        border-radius: 8px;
-        scrollbar-width: none; /* hides scrollbar on Firefox */
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    nav ul::-webkit-scrollbar {
-        display: none; /* hides scrollbar on Chrome/Safari */
-    }
-
-    nav ul li {
-        flex: 0 0 auto; /* prevents items from shrinking */
-    }
-
-    nav ul li a {
-        display: inline-block;
-        padding: 8px 14px;
-        background: rgba(0, 94, 255, 0.1);
-        border-radius: 6px;
-        transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-        background: rgb(0, 94, 255);
-        color: #fff;
-        box-shadow: 0 0 8px rgba(0, 94, 255, 0.6);
     }
 }
