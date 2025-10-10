@@ -177,11 +177,13 @@ nav ul li a:hover {
 
 /* ------------------ RESPONSIVE DESIGN ------------------ */
 @media (max-width: 768px) {
-    /* header rearranges vertically */
+    /* header stacks vertically */
     .header {
         flex-direction: column;
         gap: 15px;
         align-items: flex-start;
+        width: 100%;
+        overflow: hidden; /* stops full-page sideways scroll */
     }
 
     /* search bar takes full width */
@@ -189,26 +191,32 @@ nav ul li a:hover {
         width: 100%;
     }
 
-    /* make nav scrollable like a horizontal carousel */
+    /* horizontal scroll only for nav menu */
+    nav {
+        width: 100%;
+        overflow-x: hidden; /* prevent nav overflow outside header */
+    }
+
     nav ul {
         display: flex;
         flex-wrap: nowrap;
-        overflow-x: auto;
+        overflow-x: auto; /* allows horizontal scroll inside */
         white-space: nowrap;
         gap: 15px;
         background: #111;
-        padding: 10px 5px;
+        padding: 10px;
         border-radius: 8px;
+        scrollbar-width: none; /* hides scrollbar on Firefox */
         width: 100%;
-        scrollbar-width: none; /* Hide scrollbar (Firefox) */
+        box-sizing: border-box;
     }
 
     nav ul::-webkit-scrollbar {
-        display: none; /* Hide scrollbar (Chrome/Safari) */
+        display: none; /* hides scrollbar on Chrome/Safari */
     }
 
     nav ul li {
-        flex: 0 0 auto; /* prevent shrinking */
+        flex: 0 0 auto; /* prevents items from shrinking */
     }
 
     nav ul li a {
@@ -216,5 +224,12 @@ nav ul li a:hover {
         padding: 8px 14px;
         background: rgba(0, 94, 255, 0.1);
         border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+        background: rgb(0, 94, 255);
+        color: #fff;
+        box-shadow: 0 0 8px rgba(0, 94, 255, 0.6);
     }
 }
