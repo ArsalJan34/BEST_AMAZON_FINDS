@@ -1,7 +1,24 @@
+/* ------------------ GLOBAL RESETS ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* ------------------ BODY ------------------ */
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
 /* ------------------ HEADER ------------------ */
 .header {
     background: rgba(0, 0, 0, 0.8);
-    padding: 10px 15px; /* reduced padding for smaller devices */
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,56 +26,42 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    flex-wrap: wrap;
 }
 
 /* ------------------ LOGO TITLE ------------------ */
 h1 {
     color: #ff9900;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     letter-spacing: 1px;
-    flex: 1 0 auto;
 }
 
 /* ------------------ NAVIGATION BAR ------------------ */
-nav {
-    width: 100%; /* ensures it spans full width under logo */
-    margin-top: 10px;
-}
-
 nav ul {
     display: flex;
-    gap: 12px;
-    overflow-x: auto;               /* enables horizontal scroll */
-    white-space: nowrap;            /* prevents wrapping */
-    padding: 8px 5px;               /* tighter spacing */
-    margin: 0;
-    scrollbar-width: none;          /* hides Firefox scrollbar */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-    scroll-behavior: smooth;        /* smooth horizontal scrolling */
+    gap: 20px;
+    overflow-x: auto; /* <-- enables horizontal scrolling on mobile */
+    white-space: nowrap; /* <-- keeps items in one line */
+    scrollbar-width: none; /* hides scrollbar (Firefox) */
 }
 
 nav ul::-webkit-scrollbar {
-    display: none; /* hides Chrome/Safari scrollbar */
+    display: none; /* hides scrollbar (Chrome, Safari) */
 }
 
 /* ------------------ NAV LINKS ------------------ */
 nav ul li a {
-    color: #fff;
-    font-weight: 600;
+    color: white;
+    font-weight: bold;
     transition: 0.3s;
-    padding: 6px 14px;
+    padding: 5px 10px;
     border-radius: 6px;
     display: inline-block;
-    background: #111; /* subtle background block to make it feel like carousel chips */
-    white-space: nowrap;
 }
 
 nav ul li a:hover {
     background: rgb(0, 94, 255);
     color: #fff;
     box-shadow: 0 0 8px rgba(0, 94, 255, 0.6);
-    transform: scale(1.05);
 }
 
 /* ------------------ SEARCH BAR ------------------ */
@@ -66,52 +69,131 @@ nav ul li a:hover {
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-left: auto;
 }
 
-/* ------------------ MOBILE VIEW ------------------ */
-@media (max-width: 768px) {
+.search-bar input {
+    padding: 8px 12px;
+    border: 2px solid #444;
+    border-radius: 6px;
+    width: 220px;
+    background: #fff;
+    color: #000;
+    transition: 0.3s;
+}
 
-    /* stack logo and nav */
+.search-bar input:focus {
+    outline: none;
+    border-color: rgb(0, 94, 255);
+    box-shadow: 0 0 6px rgba(0, 94, 255, 0.7);
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(0, 94, 255);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-bar button:hover {
+    background: #000;
+    border: 2px solid rgb(0, 94, 255);
+    transform: scale(1.08);
+}
+
+/* ------------------ PRODUCT GRID ------------------ */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* ------------------ PRODUCT CARD ------------------ */
+.card1 {
+    background: #111;
+    border: 2px solid #1a1a1a;
+    border-radius: 14px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+    max-width: 320px;
+    margin: auto;
+}
+
+.card1:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.card1 img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.card1 img:hover {
+    transform: scale(1.05);
+}
+
+.card1 h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.card1 p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+/* ------------------ AMAZON BUTTON ------------------ */
+.amazon-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #ff9900;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 5px;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.4);
+}
+
+.amazon-btn:hover {
+    background: #e68a00;
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(255, 153, 0, 0.7);
+}
+
+/* ------------------ RESPONSIVE DESIGN ------------------ */
+@media (max-width: 768px) {
+    /* header rearranges vertically */
     .header {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 12px 10px;
+        gap: 15px;
     }
 
-    /* logo smaller on mobile */
-    h1 {
-        font-size: 1.4rem;
-        margin-bottom: 6px;
-    }
-
-    /* make nav full width + side scroll feel like carousel */
-    nav {
-        width: 100%;
-    }
-
-    nav ul {
-        padding: 8px 0;
-        background: rgba(17, 17, 17, 0.95);
-        border-radius: 10px;
-        gap: 8px;
-    }
-
-    nav ul li a {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-        border-radius: 20px;
-        background: #111;
-    }
-
-    /* make search bar full width below nav */
-    .search-bar {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
+    /* search bar takes full width */
     .search-bar input {
-        width: 70%;
+        width: 100%;
+    }
+
+    /* navigation scrolls sideways */
+    nav ul {
+        gap: 15px;
+        justify-content: flex-start;
+        background: #111;
+        padding: 10px;
+        border-radius: 8px;
     }
 }
