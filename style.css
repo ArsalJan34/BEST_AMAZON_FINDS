@@ -20,13 +20,16 @@ body {
   flex: 1; /* take available middle space */
   gap: 5px;
 }
+ .logo{
+    border-bottom: gray 2px solid;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 .header {
     background: rgba(0, 0, 0, 0.8);
     padding: 0 10px 0 10px;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
+
     border-bottom: 2px solid rgb(0, 94, 255);
     position: sticky;
     top: 0;
@@ -38,24 +41,40 @@ body {
     align-content: center;
     padding: 5px 10px 5px 10px;
 }
-
+.LogoP{
+    width: 60px;
+    height: 100%;
+    object-fit: contain;
+    margin-right: 10px;
+}
 h1 {
     color: #ff9900;
     font-size: 1.8rem;
     letter-spacing: 1px;
 }
 nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
     background-color: transparent;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 nav ul {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-nav li{
-height: 50px;;
+
+nav li:first-child {
+  margin-right: 0;
+}
+
+nav li {
+  height: 50px;
 }
     nav a {
         height: 100%;
@@ -65,14 +84,14 @@ height: 50px;;
         color: rgb(255, 255, 255);
         text-decoration: none;
         font-weight: 500;
+        transition: .5s ease;
     }
    nav a:hover{
-    background-color: gray;
+
+    border-bottom: 2px solid white;
 
    }
-  nav li:first-child{
-    margin-right: auto;
-  }
+
 
 
 .sidebar {
