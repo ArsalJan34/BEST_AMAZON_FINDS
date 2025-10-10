@@ -13,17 +13,30 @@ body {
     color: #fff;
     line-height: 1.6;
 }
-
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* take available middle space */
+  gap: 5px;
+}
 .header {
     background: rgba(0, 0, 0, 0.8);
-    padding: 15px 30px;
+    padding: 0 10px 0 10px;
     display: flex;
     justify-content: space-between;
+    align-content: center;
     align-items: center;
     border-bottom: 2px solid rgb(0, 94, 255);
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 5px 10px 5px 10px;
 }
 
 h1 {
@@ -61,6 +74,7 @@ height: 50px;;
     margin-right: auto;
   }
 
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -71,7 +85,7 @@ height: 50px;;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -82,6 +96,19 @@ height: 50px;;
 }
 .sidebar a{
     width: 100%;
+}
+.bx-menu {
+    font-size: 1.8rem;
+    color: rgb(229, 255, 0);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav   .bx-x {
+    font-size: 1.8rem;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    transition: 0.3s;
 }
 /* 
 
@@ -235,3 +262,9 @@ nav ul li a:hover {
         gap: 15px;
     }
 } */
+@media (max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    
+}
